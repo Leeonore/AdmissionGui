@@ -1,0 +1,20 @@
+.type, .info {
+  float : left;
+  margin-left : 2%
+}
+
+.type {
+  font-weight:bold
+}
+
+ul {
+  background-color: #ccffff;
+}
+
+#buttonSelect {
+  float : right;
+}
+
+#buttonSearch {
+  margin-left: 40%
+}

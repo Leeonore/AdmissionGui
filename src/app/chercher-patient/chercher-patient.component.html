@@ -1,0 +1,40 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Recherche d'un patient</h4>
+    <p>Veuillez compléter l'ensemble des champs suivants afin de trouver votre patient</p>
+  </div>
+</div>
+
+<div class='container'>
+
+  <div class="input-field">
+    <input #name id="name" type="text" class="validate">
+    <label for="name">Nom</label>
+  </div>
+
+  <div class="input-field">
+    <input #surname id="surname" type="text" class="validate">
+    <label for="surname">Prénom</label>
+  </div>
+
+  <div class="input-field">
+    <input #birthdate id="birthdate" type="text" class="validate">
+    <label for="birthdate">Date de naissance</label>
+  </div>
+</div>
+
+<button class='btn red' id="buttonSearch" (click)="searchPatient(name.value,surname.value,birthdate.value)">Rechercher</button>
+<ul *ngFor="let d of myPatient">
+  <h4>Patient d'IPP {{ d.IPP }} : </h4>
+  <button class='btn blue' (click)="setIPP(d.IPP)" routerLink='/afficherpatient' routerLinkActive='active' id="buttonSelect" >Selectionner</button>
+  <li><div class="type">Nom : </div> <div class="info"> {{ d.nom }}</div></li>
+  <li><div class="type">Prénom : </div><div class="info"> {{d.prenom}}</div> </li>
+  <li><div class="type">Date de Naissance : </div><div class="info"> {{d.dateNaiss}}</div> </li><br>
+  <li><div class="type">Sexe: </div><div class="info"> {{d.sexe}}</div></li>
+  <li><div class="type">Téléphone : </div><div class="info"> {{d.telephone}}</div></li>
+  <li><div class="type">Numéro de sécu : </div><div class="info"> {{d.numSecu}}</div></li><br>
+  <li><div class="type">Adresse : </div><div class="info"> {{d.adresse}}</div></li>
+  <br>
+  <br>
+</ul>
+<button class='btn blue' routerLink='/createpatient' routerLinkActive='active' id="buttonSelect" >Créer un nouveau patient</button>

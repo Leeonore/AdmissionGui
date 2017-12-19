@@ -1,0 +1,54 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Création d'un patient</h4>
+    <p>Veuillez compléter les données</p>
+  </div>
+</div>
+
+<div class='container'>
+
+  <div class="input-field">
+    <input #name id="name" type="text" class="validate">
+    <label for="name">Nom</label>
+  </div>
+
+  <div class="input-field">
+    <input #surname id="surname" type="text" class="validate">
+    <label for="surname">Prénom</label>
+  </div>
+
+  <div class="input-field">
+    <input #birthdate id="birthdate" type="text" class="validate">
+    <label for="birthdate">Date de naissance</label>
+  </div>
+
+  <div class="input-field">
+    <input #sex id="sex" type="text" class="validate">
+    <label for="sex">Sexe</label>
+  </div>
+
+  <div class="input-field">
+    <input #secu id="secu" type="text" class="validate">
+    <label for="secu">Numéro de sécurité sociale</label>
+  </div>
+
+  <div class="input-field">
+    <input #adress id="adress" type="text" class="validate">
+    <label for="adress">Adresse</label>
+  </div>
+
+  <div class="input-field">
+    <input #phone id="phone" type="text" class="validate">
+    <label for="phone">Telephone</label>
+  </div>
+</div>
+
+<div class='section'>
+  <div class='row center'>
+    <button class="btn waves-effect waves-light"
+            (click)="createPatient(name.value, surname.value, birthdate.value, sex.value, secu.value, adress.value, phone.value);setIPP(3)" routerLink='/afficherpatient' routerLinkActive='active'>
+      <i class="material-icons right">save</i>
+      Enregistrer
+    </button>
+  </div>
+</div>

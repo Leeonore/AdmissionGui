@@ -1,0 +1,15 @@
+<button class='btn red' id="buttonSearch" (click)="affichePatient();setIPP()">Afficher</button>
+
+
+<ul *ngFor="let d of myPatient">
+  <h4>Patient d'IPP {{ d.IPP }} : </h4>
+  <li><div class="type">Nom : </div> <div class="info"> {{ d.nom }}</div></li>
+  <li><div class="type">Prénom : </div><div class="info"> {{d.prenom}}</div> </li>
+  <li><div class="type">Date de Naissance : </div><div class="info"> {{d.dateNaiss}}</div> </li><br>
+  <li><div class="type">Sexe: </div><div class="info"> {{d.sexe}}</div></li>
+  <li><div class="type">Téléphone : </div><div class="info"> {{d.telephone}}</div></li>
+  <li><div class="type">Numéro de sécu : </div><div class="info"> {{d.numSecu}}</div></li><br>
+  <li><div class="type">Adresse : </div><div class="info"> {{d.adresse}}</div></li>
+  <br>
+  <br>
+</ul>
