@@ -33,6 +33,10 @@ export class PatientService {
   return this.httpClient.post(this.URL, this.generateJSONPatient(name,surname,birthdate,sex,secu,adress,phone), {headers: this.httpHeaders});
   }
 
+  updatePatient(ipp : string, name : string, surname : string, birthdate : string, sex : string, secu : string, adress : string, phone : string): Observable<Object> {
+  return this.httpClient.post(this.URL, this.generateJSONPatientUpdate(ipp,name,surname,birthdate,sex,secu,adress,phone), {headers: this.httpHeaders});
+  }
+
   generateJSONPatient (name : string, surname : string, birthdate : string, sex : string, secu : string, adress : string, phone : string): string {
    return '{ ' +
     ' "nom" : "'+ name + '",' +
@@ -44,4 +48,17 @@ export class PatientService {
     ' "numSecu" : "'+ secu +
     ' "}';
  }
+
+ generateJSONPatientUpdate (ipp : string, name : string, surname : string, birthdate : string, sex : string, secu : string, adress : string, phone : string): string {
+  return '{ ' +
+   ' "IPP" : "'+ ipp + '",' +
+   ' "nom" : "'+ name + '",' +
+   ' "prenom" : "'+ surname + '",' +
+   ' "dateNaiss" : "'+ birthdate + '",' +
+   ' "adresse" : "'+ adress + '",' +
+   ' "telephone" : "'+ phone + '",' +
+   ' "sexe" : "'+ sex + '",' +
+   ' "numSecu" : "'+ secu +
+   ' "}';
+}
 }

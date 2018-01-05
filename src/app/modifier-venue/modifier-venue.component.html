@@ -1,0 +1,19 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Modifier les informations de la venue numéro {{ myVenue.IEP }}</h4>
+    <p>Veuillez mettre à jour les informations voulues</p>
+  </div>
+</div>
+
+<div class='container'>
+    <h5> UF de traitement : </h5>
+    <input #UF id="UF" value={{myVenue.UFtraitement}} type="text" class="validate">
+    <h5>Date de venue :</h5>
+    <input #DVenue id="DVenue" value={{myVenue.dateVenue}} type="text" class="validate">
+    <h5>Date de sortie :</h5>
+    <input #Dsortie id="Dsortie" value={{myVenue.dateSortie}} type="text" class="validate">
+    <h5>Type de venue : </h5>
+    <input #TypeVenue id="TypeVenue" value={{myVenue.typeVenue}} type="text" class="validate">
+</div>
+
+<button class='btn blue' (click)="modifierVenue(UF.value, DVenue.value, Dsortie.value, TypeVenue.value)" routerLink='/afficherpatient' routerLinkActive='active' id="buttonSelect" >Enregistrer</button>

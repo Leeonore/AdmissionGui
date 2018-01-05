@@ -1,0 +1,25 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Modifier les informations du patient d'IPP numéro {{ myPatient.IPP }}</h4>
+    <p>Veuillez mettre à jour les informations voulues</p>
+  </div>
+</div>
+
+<div class='container'>
+    <h5> Nom : </h5>
+    <input #name id="name" value={{myPatient.nom}} type="text" class="validate">
+    <h5>Prénom :</h5>
+    <input #surname id="surname" value={{myPatient.prenom}} type="text" class="validate">
+    <h5>Date de naissance :</h5>
+    <input #birthdate id="birthdate" value={{myPatient.dateNaiss}} type="text" class="validate">
+    <h5>Sexe : </h5>
+    <input #sex id="sex" value={{myPatient.sexe}} type="text" class="validate">
+    <h5>Téléphone : </h5>
+    <input #phone id="phone" value={{myPatient.telephone}} type="text" class="validate">
+    <h5>Numéro de sécurité sociale : </h5>
+    <input #secu id="secu" value={{myPatient.numSecu}} type="text" class="validate">
+    <h5>Adresse : </h5>
+    <input #adress id="adress" value={{myPatient.adresse}} type="text" class="validate">
+</div>
+
+<button class='btn blue' (click)="modifierPatient(name.value, surname.value, birthdate.value, sex.value, secu.value, adress.value, phone.value)" routerLink='/afficherpatient' routerLinkActive='active' id="buttonSelect" >Enregistrer</button>

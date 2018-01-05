@@ -1,7 +1,7 @@
 <div class='section'>
   <div class='row center'>
     <h4>Recherche d'un patient</h4>
-    <p>Veuillez compléter au moins deux des champs suivants afin de trouver votre patient</p>
+    <p>Veuillez compléter l'ensemble des champs suivants afin de trouver votre patient</p>
   </div>
 </div>
 
@@ -22,7 +22,9 @@
     <label for="birthdate">Date de naissance</label>
   </div>
 </div>
-<button class='btn red' id="buttonSearch" (click)="searchPatient(name.value,surname.value,birthdate.value)">Rechercher</button>
+
+<!--<button class='btn red' id="buttonSearch" (click)="searchPatient(name.value,surname.value,birthdate.value)">Rechercher</button>-->
+<button class='btn red' id="buttonSearch" (click)="searchPatient('nom1','prenom1','dateNaiss1')">Rechercher</button>
 <ul *ngFor="let d of myPatient">
   <h4>Patient d'IPP {{ d.IPP }} : </h4>
   <button class='btn blue' (click)="setIPP(d.IPP)" routerLink='/afficherpatient' routerLinkActive='active' id="buttonSelect" >Selectionner</button>
@@ -36,6 +38,4 @@
   <br>
   <br>
 </ul>
-
-<div id="response"></div>
-<button class='btn blue' routerLink='/createpatient' disabled="true" routerLinkActive='active' id="buttonCreate">Créer un nouveau patient</button>
+<button class='btn blue' routerLink='/createpatient' routerLinkActive='active' id="buttonSelect" >Créer un nouveau patient</button>

@@ -15,22 +15,24 @@ export class ChercherPatientComponent implements OnInit {
   constructor( private PatientService : PatientService) {}
 
   private getMyPatient(): void {
-    this.myPatient = this.PatientService.getPatientInfo(this.name, this.surname, this.birthdate).subscribe(patient => this.myPatient = patient)
+      this.myPatient = this.PatientService.getPatientInfo(this.name, this.surname, this.birthdate).subscribe(patient => this.myPatient = patient)
   }
 
   searchPatient(nom : string, prenom : string, dateNais : string) : void {
-    if (nom && prenom && dateNais){
-      this.name = nom;
-      this.surname = prenom;
-      this.birthdate = dateNais;
-      this.getMyPatient();
+      (<HTMLButtonElement> document.getElementById("buttonCreate")).disabled = false;
+      if ((nom == "" && prenom =="") || (nom == "" && dateNais =="") || (prenom == "" && dateNais == "")) {
+        (<HTMLDivElement> document.getElementById("response")).innerText = "Veuillez renseigner au moins deux champs";
+      } else {
+        this.name = nom;
+        this.surname = prenom;
+        this.birthdate = dateNais;
+        this.getMyPatient();
     }
   }
 
   setIPP(ipp) : void {
       this.PatientService.setIPP(ipp);
   }
-
 
   ngOnInit() {
   }

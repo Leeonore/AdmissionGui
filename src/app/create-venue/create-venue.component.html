@@ -1,0 +1,38 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Création d'une venue</h4>
+    <p>Veuillez compléter les données</p>
+  </div>
+</div>
+
+<div class='container'>
+
+  <div class="input-field">
+    <input #UF id="UF" type="text" class="validate">
+    <label for="UF">UF de traitement</label>
+  </div>
+
+  <div class="input-field">
+    <input #dVenue id="dVenue" type="text" class="validate">
+    <label for="dVenue">Date de venue</label>
+  </div>
+
+  <div class="input-field">
+    <input #dSortie id="dSortie" type="text" class="validate">
+    <label for="dSortie">Date de sortie</label>
+  </div>
+
+  <div class="input-field">
+    <input #typeVenue id="typeVenue" type="text" class="validate">
+    <label for="typeVenue">Type de venue</label>
+  </div>
+
+<div class='section'>
+  <div class='row center'>
+    <button class="btn waves-effect waves-light"
+            (click)="createVenue(UF.value, dVenue.value, dSortie.value, typeVenue.value)" routerLink='/afficherpatient' routerLinkActive='active'>
+      <i class="material-icons right">save</i>
+      Enregistrer
+    </button>
+  </div>
+</div>

@@ -1,15 +1,27 @@
-<button class='btn red' id="buttonSearch" (click)="affichePatient();setIPP()">Afficher</button>
+<h2> Informations du patient </h2>
+<div class='patient' ng-show="myPatient != null">
+<button class='btn blue' (click)="setIPP()" routerLink='/modifierpatient' routerLinkActive='active' id="buttonSelect" > Modifier le patient</button>
+  <div class="type">IPP : </div> <div class="info"> {{ myPatient.IPP }}</div>
+  <div class="type">Nom : </div> <div class="info"> {{ myPatient.nom }}</div>
+  <div class="type">Prénom : </div><div class="info"> {{ myPatient.prenom}}</div>
+  <div class="type">Date de Naissance : </div><div class="info"> {{myPatient.dateNaiss}}</div><br>
+  <div class="type">Sexe: </div><div class="info"> {{myPatient.sexe}}</div>
+  <div class="type">Téléphone : </div><div class="info"> {{myPatient.telephone}}</div>
+  <div class="type">Numéro de sécu : </div><div class="info"> {{myPatient.numSecu}}</div><br>
+  <div class="type">Adresse : </div><div class="info"> {{myPatient.adresse}}</div><br>
 
+</div>
 
-<ul *ngFor="let d of myPatient">
-  <h4>Patient d'IPP {{ d.IPP }} : </h4>
-  <li><div class="type">Nom : </div> <div class="info"> {{ d.nom }}</div></li>
-  <li><div class="type">Prénom : </div><div class="info"> {{d.prenom}}</div> </li>
-  <li><div class="type">Date de Naissance : </div><div class="info"> {{d.dateNaiss}}</div> </li><br>
-  <li><div class="type">Sexe: </div><div class="info"> {{d.sexe}}</div></li>
-  <li><div class="type">Téléphone : </div><div class="info"> {{d.telephone}}</div></li>
-  <li><div class="type">Numéro de sécu : </div><div class="info"> {{d.numSecu}}</div></li><br>
-  <li><div class="type">Adresse : </div><div class="info"> {{d.adresse}}</div></li>
+<h2> Venues du patient </h2>
+<ul *ngFor="let v of myVenue">
+  <button class='btn blue' (click)="setIEP(v.IEP);setIPP(myPatient.IPP)" routerLink='/modifiervenue' routerLinkActive='active' id="buttonSelect" >Modifier</button>
+
+  <div class="type">IEP : </div> <div class="info"> {{ v.IEP }}</div>
+  <li><div class="type">UF de traitement : </div> <div class="info"> {{ v.UFtraitement }}</div></li>
+  <li><div class="type"> Date de venue : </div><div class="info"> {{v.dateVenue}}</div> </li>
+  <li><div class="type">Date de sortie : </div><div class="info"> {{v.dateSortie}}</div> </li><br>
+  <li><div class="type">Type de venue : </div><div class="info"> {{v.typeVenue}}</div></li>
   <br>
   <br>
 </ul>
+<button class='btn blue' routerLink='/createvenue' routerLinkActive='active' id="buttonSelect" >Créer une venue</button>
